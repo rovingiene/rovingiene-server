@@ -7,12 +7,17 @@ const socketGameConq = (socket, io) => {
     players: io.sockets.sockets.size,
     playing: playing,
   };
+  playing += 1;
 
   sendMessage(socket, events.status, status);
-  playing += 1;
+
+  onMessage(socket, events.move, (res) => {
+    console.log(res);
+  });
 
   onMessage(socket, events.disconnect, () => {
     console.log("Socket Disconnected");
+    playing -= 1;
     sendMessage(io, events.status, status);
   });
 };

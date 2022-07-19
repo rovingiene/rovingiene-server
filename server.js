@@ -10,6 +10,7 @@ import { Server } from "socket.io";
 import socketGameConq from "./handlers/socketGameConq.js";
 import gameTypes from "./data/gameTypes.js";
 import events from "./data/socketEvents.js";
+import { onMessage } from "./utils/socketUtils.js";
 
 dotenv.config();
 
@@ -33,6 +34,11 @@ io.on(events.connection, (socket) => {
   const { gameType } = socket.handshake.query;
   console.log("A user is connected");
   console.log(io.sockets.sockets.size);
+
+  onMessage(socket, events.ping, (callback) => {
+    callback();
+  });
+
   switch (gameType) {
     case gameTypes.gameConq:
       socketGameConq(socket, io);

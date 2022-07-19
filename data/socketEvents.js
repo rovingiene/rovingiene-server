@@ -8,6 +8,7 @@ const events = {
   tick: "tick",
   connection: "connection",
   connectError: "connect_error",
+  ping: "ping",
 
   // Games
   find: "find",
