@@ -20,7 +20,7 @@ app.use(cors());
 app.use("/user", user);
 
 app.get("/", (req, res) => {
-  res.send("Express + TypeScript Server");
+  res.send("Express + javasscript Server");
 });
 
 const server = app.listen(port, () => {
