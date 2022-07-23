@@ -21,6 +21,9 @@ const socketGameConq = (socket, io) => {
     let countdownTimer = 10;
     let countdown = setInterval(() => {
       countdownTimer -= 1;
+      for (let test = 0; test < 1000; test++) {
+        console.log(test);
+      }
       sendMessage(socket, "countdown", countdownTimer);
       if (countdownTimer === 0) {
         clearInterval(countdown);
