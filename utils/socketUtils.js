@@ -1,4 +1,4 @@
-import events from "../data/socketEvents.js";
+import events from "../constants/socketEvents.js";
 
 /*@flow*/
 export const sendMessage = (socket, event, res) => {

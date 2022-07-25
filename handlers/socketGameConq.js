@@ -1,4 +1,4 @@
-import events from "../data/socketEvents.js";
+import events from "../constants/socketEvents.js";
 import { onMessage, sendMessage } from "../utils/socketUtils.js";
 
 var gameMap = new Map();

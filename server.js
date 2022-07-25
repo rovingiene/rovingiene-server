@@ -8,10 +8,10 @@ import user from "./routes/user.js";
 // Socket
 import { Server } from "socket.io";
 import socketGameConq from "./handlers/socketGameConq.js";
-import gameTypes from "./data/gameTypes.js";
-import events from "./data/socketEvents.js";
+import gameTypes from "./constants/gameTypes.js";
+import events from "./constants/socketEvents.js";
 import { onMessage } from "./utils/socketUtils.js";
-import "./test.js";
+import "./gist.js";
 
 dotenv.config();
 
@@ -22,7 +22,7 @@ app.use(cors());
 app.use("/user", user);
 
 app.get("/", (req, res) => {
-  res.send("Express + javasscript Server");
+  res.send("Express + javascript Server.");
 });
 
 const server = app.listen(port, () => {
