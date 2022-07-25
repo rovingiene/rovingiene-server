@@ -9,6 +9,9 @@ const events = {
   connection: "connection",
   connectError: "connect_error",
   ping: "ping",
+  startCountdown: "start_countdown",
+  countdown: "countdown",
+  onlineStatus: "online_status",
 
   // Games
   find: "find",

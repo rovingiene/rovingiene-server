@@ -16,15 +16,15 @@ const socketGameConq = (socket, io) => {
 
   sendMessage(socket, events.status, status);
 
-  onMessage(socket, "start_countdown", () => {
+  onMessage(socket, events.startCountdown, () => {
     console.log("counting down");
     let countdownTimer = 10;
     let countdown = setInterval(() => {
       countdownTimer -= 1;
-      for (let test = 0; test < 1000; test++) {
+      for (let test = 0; test < 1000000; test++) {
         console.log(test);
       }
-      sendMessage(socket, "countdown", countdownTimer);
+      sendMessage(socket, events.countdown, countdownTimer);
       if (countdownTimer === 0) {
         clearInterval(countdown);
       }

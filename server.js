@@ -11,6 +11,7 @@ import socketGameConq from "./handlers/socketGameConq.js";
 import gameTypes from "./data/gameTypes.js";
 import events from "./data/socketEvents.js";
 import { onMessage } from "./utils/socketUtils.js";
+import "./test.js";
 
 dotenv.config();
 
